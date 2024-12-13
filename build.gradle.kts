@@ -40,6 +40,7 @@ dependencies {
 
     implementation("com.ritense.valtimo:valtimo-dependencies")
 
+    implementation("com.ritense.valtimo:process-link-url:$valtimoVersion")
     implementation("com.ritense.valtimo:local-document-generation")
     implementation("com.ritense.valtimo:local-resource")
     implementation("com.ritense.valtimo:local-mail")
