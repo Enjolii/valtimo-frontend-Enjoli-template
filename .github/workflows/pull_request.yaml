@@ -106,5 +106,5 @@ jobs:
               run: |
                   branch=${GITHUB_REF##*/}
                   cosign verify ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_NAMESPACE }}/${{ env.DOCKER_IMAGE_NAME }}:${{ needs.build.outputs.tagToDeploy }} \
-                     --certificate-identity https://github.com/${{ env.GITHUB_NAMESPACE }}/${{ env.DOCKER_IMAGE_NAME }}/.github/workflows/cicd.yaml@refs/heads/${branch} \
+                     --certificate-identity https://github.com/${{ env.GITHUB_NAMESPACE }}/${{ env.DOCKER_IMAGE_NAME }}/.github/workflows/pull_request.yaml@refs/heads/${branch} \
                      --certificate-oidc-issuer https://token.actions.githubusercontent.com | jq
