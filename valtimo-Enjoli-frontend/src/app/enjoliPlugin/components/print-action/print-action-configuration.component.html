@@ -1,0 +1,18 @@
+<v-form
+        (valueChange)="formValueChange($event)"
+        *ngIf="{
+        disabled: disabled$ | async,
+        prefill: prefillConfiguration$ ? (prefillConfiguration$ | async) : null
+    } as obs"
+>
+  <v-input
+          name="print"
+          [title]="'Vul in wat u wilt printen' | pluginTranslate: pluginId | async"
+          [margin]="true"
+          [defaultValue]="obs.prefill?.print"
+          [disabled]="obs.disabled"
+          [required]="true"
+          [placeholder]="'Bijvoorbeeld: Hello World!'"
+  >
+  </v-input>
+</v-form>

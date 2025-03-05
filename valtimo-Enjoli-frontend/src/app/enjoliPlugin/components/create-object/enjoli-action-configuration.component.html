@@ -1,0 +1,43 @@
+<v-form
+        (valueChange)="formValueChange($event)"
+        *ngIf="{
+        disabled: disabled$ | async,
+        prefill: prefillConfiguration$ ? (prefillConfiguration$ | async) : null
+    } as obs"
+>
+  <v-input
+          name="apiUrl"
+          [title]="'Objects api client URL' | pluginTranslate: pluginId | async"
+          [margin]="true"
+          [defaultValue]="obs.prefill?.apiUrl"
+          [disabled]="obs.disabled"
+          [required]="true"
+  ></v-input>
+  <v-input
+          name="type"
+          [title]="'ObjectType' | pluginTranslate: pluginId | async"
+          [margin]="true"
+          [defaultValue]="obs.prefill?.type"
+          [disabled]="obs.disabled"
+          [required]="true"
+  >
+  </v-input>
+  <v-input
+          name="filmdata"
+          [title]="'filmdata' | pluginTranslate: pluginId | async"
+          [margin]="true"
+          [defaultValue]="obs.prefill?.filmdata"
+          [disabled]="obs.disabled"
+          [required]="true"
+  >
+  </v-input>
+  <v-input
+          name="gamedata"
+          [title]="'gamedata' | pluginTranslate: pluginId | async"
+          [margin]="true"
+          [defaultValue]="obs.prefill?.gamedata"
+          [disabled]="obs.disabled"
+          [required]="true"
+  >
+  </v-input>
+</v-form>
